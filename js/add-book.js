@@ -1,8 +1,6 @@
-// import editrow from "./edit-book.js";
 import deleterow from "./delete-book.js";
 const tables = document.getElementById('tableid');
 import {editMode,editrow,editedItem} from './edit-book.js'
-// const buttonClicked = document.querySelector('button'); 
 export const addBook = (title,author,isbn,publDate,general,uid)=>{
   const todayDate = new Date();
 

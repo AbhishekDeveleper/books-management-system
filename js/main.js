@@ -37,7 +37,7 @@ btn.addEventListener('click',(e)=>{
  
      addBook(title,author,isbn,publDate,general,uid)
    
-     console.log(tables.children.length);
+   
      console.log(`Book Title : ${title.value} Book Author:${author.value} 
         ISBN: ${isbn.value} Publication Date: ${publDate.value}
         General : ${general.value}`)
