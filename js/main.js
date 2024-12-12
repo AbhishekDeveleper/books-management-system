@@ -57,11 +57,13 @@ btn.addEventListener('click',(e)=>{
     
     const regex = /[^0-9]/;
     if(isbn.value.match(regex)){
-      alert("ISBN must be a number ! ");
+      isbn.style.borderColor='red'
+      
       console.log('comes')
       return;
      
     }
+    isbn.style.borderColor='#33333336';
     if(title.value=="" || author.value=="" || isbn.value=="" || publDate.value=="" || general.value ==''){ 
       alert("All fields are reqquired !") 
       return}
@@ -70,6 +72,10 @@ btn.addEventListener('click',(e)=>{
      
  
      addBook(title,author,isbn,publDate,general,uid)
+     title.value=""
+     author.value=""
+     isbn.value=""
+     publDate.value=""
      btn.value='Add Book'
      
    

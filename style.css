@@ -133,3 +133,10 @@ button{
    display: none;
    visibility: hidden;
 }
+
+input:focus:invalid{
+    border-color: red;
+}
+input:valid{
+    border: 2px solid #33333336;
+}
