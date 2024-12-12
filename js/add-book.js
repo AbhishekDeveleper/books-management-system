@@ -1,4 +1,5 @@
 import deleterow from "./delete-book.js";
+import { btn,category } from "./main.js";
 const tables = document.getElementById('tableid');
 import {editMode,editrow,editedItem} from './edit-book.js'
 export const addBook = (title,author,isbn,publDate,general,uid)=>{
@@ -10,6 +11,7 @@ export const addBook = (title,author,isbn,publDate,general,uid)=>{
    
   let newid;
       if(editMode.value===false){
+        // btn.textContent='Add Book';
         console.log(editMode)
       const tr  = document.createElement('tr');    
       const th1 = document.createElement('td');
@@ -50,24 +52,33 @@ export const addBook = (title,author,isbn,publDate,general,uid)=>{
        newid ='newclass-'+uid;
        const editid = 'edit-'+uid
        tr.setAttribute('class',newid)
+      tr.classList.add(general.value)
        btn1.setAttribute('class',editid);
        btn2.setAttribute('class',newid);
        tables.appendChild(tr);
+       category.value="No Category"
       }else{
         console.log("In edited mode",editMode)
         // editedItem = document.getElementsByClassName(newid);
-        console.log(editedItem);
+        btn.value='Update Book';
+        const removeClass = editedItem[0].classList[1];
+        editedItem[0].classList.remove(removeClass);
+        editedItem[0].classList.add(general.value);
+        console.log(editedItem[0].classList[1],'editedItem0');
         editedItem[0].children[0].innerText=title.value
         editedItem[0].children[1].innerText=author.value
         editedItem[0].children[2].innerText=isbn.value 
         editedItem[0].children[3].innerText=publDate.value 
         editedItem[0].children[4].innerText=general.value  
         editedItem[0].children[6].innerText=`${years}-Y /${months}-M /${days}-d`
+        
         editMode.value=false
+        category.value="No Category"
       }
 
-         
+   
      tables.style.visibility='visible'
+     category.style.visibility='visible';
       
     }
     

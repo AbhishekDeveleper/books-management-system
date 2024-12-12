@@ -6,11 +6,45 @@ export const isbn=document.getElementById('isbn');
 export const publDate = document.getElementById('publicationDate');
 export const general = document.getElementById('gener');
 const tables = document.getElementById('tableid');
+export const category = document.getElementById('categories')
+
 let uid= 0;
 
 
 tables.style.visibility='hidden';
-  tables.style.opacity='none'
+category.style.visibility='hidden'
+
+
+const changeCategory=()=>{
+
+  const allData = Object.values(document.getElementsByTagName('tr'));
+  
+  allData.map((elem,inde)=>{
+    
+    const classlist=elem.classList
+      
+   
+   if(Object.values(classlist)[1]!=category.value ){
+    if(Object.values(classlist)[1]!=undefined)
+
+    
+      elem.classList.add('hidden');
+   }else{
+    elem.classList.remove('hidden');
+   }
+   if(category.value=="No Category") {
+   
+    elem.classList.remove('hidden');}
+    
+  })
+
+  
+  
+
+}
+category.addEventListener('click',changeCategory)
+
+
 
 if(tables.children.length>=2) tables.style.visibility='visible'
 btn.addEventListener('click',(e)=>{
@@ -36,7 +70,8 @@ btn.addEventListener('click',(e)=>{
      
  
      addBook(title,author,isbn,publDate,general,uid)
-   
+     btn.value='Add Book'
+     
    
      console.log(`Book Title : ${title.value} Book Author:${author.value} 
         ISBN: ${isbn.value} Publication Date: ${publDate.value}

@@ -1,8 +1,10 @@
-import { title,author,isbn,publDate,general} from "./main.js";
+import { title,author,isbn,publDate,general,btn} from "./main.js";
 export let editedItem
 export let editMode={value:false}
 
 export const editrow = (uid)=>{
+    console.log(btn,' btn')
+    btn.value='Update Book';
 editMode.value = true;
 console.log(editMode,'inediting')
  editedItem = document.getElementsByClassName(uid);
