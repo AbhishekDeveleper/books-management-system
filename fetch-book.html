@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Document</title>
+</head>
+<body>
+    <p>Books</p>
+    <div class="description"  id="fetchBtn">
+        <div>
+          <select name="" id="categories" >
+          
+          <option value="science">Science</option>
+          <option value="all">ALL</option>
+          <option value="fiction">Fiction</option>
+          <option value="history">History</option>
+          <option value="adventure">Adventure</option>
+          <option value="electronic">Electronic</option>
+        </select>
+      </div>
+     <!-- <p id="loading-text">Loading ...</p> -->
+      <table id="tableid">
+        <tr>
+          <th>Book Title</th>
+          <th>Author</th>
+          <th>ISBN</th>
+          <th>Publicshed Date</th>
+          <th>Gener</th>
+          
+        </tr>
+        
+      </table>
+      <script type="module" src="./js/fetch-book.js"></script>
+</body>
+
+</html>
