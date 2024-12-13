@@ -7,10 +7,11 @@ export const publDate = document.getElementById('publicationDate');
 export const general = document.getElementById('gener');
 const tables = document.getElementById('tableid');
 export const category = document.getElementById('categories')
+// const fetchBtn = document.getElementById('fetchBtn');
 
 let uid= 0;
 
-
+console.log(tables)
 tables.style.visibility='hidden';
 category.style.visibility='hidden'
 
@@ -85,6 +86,13 @@ btn.addEventListener('click',(e)=>{
   console.log("btn clicked")
   
 })
+
+
+
+
+
+      
+
 
 
 

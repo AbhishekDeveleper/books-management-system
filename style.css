@@ -80,6 +80,8 @@ input{
 }
 
 select{
+    margin-top: 10px;
+    margin-bottom: 10px;
     width: 100%;
     outline: none;
     border: none;
@@ -99,6 +101,8 @@ body{
 
 .description{
     width: 100%;
+    margin-top: 10px;
+    margin-bottom: 10px;
 }
 
 table,tr{
@@ -140,3 +144,9 @@ input:focus:invalid{
 input:valid{
     border: 2px solid #33333336;
 }
+
+
+/* #fetchBtn{
+    margin-top: 20px;
+    margin-bottom: 20px;
+} */
