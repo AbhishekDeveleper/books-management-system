@@ -1,13 +1,13 @@
 import {addBook} from "./add-book.js";
-export const btn=document.querySelector(".addBookBtn");
-export const title=document.getElementById('title');
-export const author=document.getElementById('author');
-export const isbn=document.getElementById('isbn');
-export const publDate = document.getElementById('publicationDate');
-export const general = document.getElementById('gener');
+export const addBookBtn=document.getElementById("addBookBtn");
+export const bookTitle=document.getElementById('title');
+export const bookAuthor=document.getElementById('author');
+export const bookIsbn=document.getElementById('isbn');
+export const bookPublDate = document.getElementById('publicationDate');
+export const bookGeneral = document.getElementById('gener');
 const tables = document.getElementById('tableid');
 export const category = document.getElementById('categories')
-// const fetchBtn = document.getElementById('fetchBtn');
+
 
 let uid= 0;
 
@@ -48,42 +48,38 @@ category.addEventListener('click',changeCategory)
 
 
 if(tables.children.length>=2) tables.style.visibility='visible'
-btn.addEventListener('click',(e)=>{
+addBookBtn.addEventListener('click',(e)=>{
   
     e.preventDefault();
     uid = uid + 1
-    console.log(uid,'uid')
-    console.log(typeof isbn);
+   
     
     
     const regex = /[^0-9]/;
-    if(isbn.value.match(regex)){
-      isbn.style.borderColor='red'
+    if(bookIsbn.value.match(regex)){
+      bookIsbn.style.borderColor='red'
       
-      console.log('comes')
+      // console.log('comes')
       return;
      
     }
-    isbn.style.borderColor='#33333336';
-    if(title.value=="" || author.value=="" || isbn.value=="" || publDate.value=="" || general.value ==''){ 
+    bookIsbn.style.borderColor='#33333336';
+    if(bookTitle.value=="" || bookAuthor.value=="" || bookIsbn.value=="" || bookPublDate.value=="" || bookGeneral.value ==''){ 
       alert("All fields are reqquired !") 
       return}
      
       
      
  
-     addBook(title,author,isbn,publDate,general,uid)
-     title.value=""
-     author.value=""
-     isbn.value=""
-     publDate.value=""
-     btn.value='Add Book'
+     addBook(bookTitle,bookAuthor,bookIsbn,bookPublDate,bookGeneral,uid)
+     bookTtle.value=""
+     bookAuthor.value=""
+     bookIsbn.value=""
+     bookPublDate.value=""
+     addBookBtn.value='Add Book'
      
    
-     console.log(`Book Title : ${title.value} Book Author:${author.value} 
-        ISBN: ${isbn.value} Publication Date: ${publDate.value}
-        General : ${general.value}`)
-  console.log("btn clicked")
+  
   
 })
 

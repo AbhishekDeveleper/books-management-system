@@ -1,5 +1,5 @@
 import deleterow from "./delete-book.js";
-import { btn,category } from "./main.js";
+import { addBookBtn,category } from "./main.js";
 const tables = document.getElementById('tableid');
 import {editMode,editrow,editedItem} from './edit-book.js'
 export const addBook = (title,author,isbn,publDate,general,uid)=>{
@@ -60,7 +60,7 @@ export const addBook = (title,author,isbn,publDate,general,uid)=>{
       }else{
         console.log("In edited mode",editMode)
         // editedItem = document.getElementsByClassName(newid);
-        btn.value='Update Book';
+        addBookBtn.value='Update Book';
         const removeClass = editedItem[0].classList[1];
         editedItem[0].classList.remove(removeClass);
         editedItem[0].classList.add(general.value);
