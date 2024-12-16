@@ -76,8 +76,8 @@ input{
     margin-top: 15px; */
 }
 
-.addBookBtn{
-    @apply h-9 w-fit px-4 py-1 bg-cyan-900 border-none text-white cursor-pointer rounded-md;
+#addBookBtn{
+    /* @apply h-9 w-fit px-4 py-1 bg-cyan-900 border-none text-white cursor-pointer rounded-md; */
     /* height: 35px;
     width: fit-content;
     padding: 5px 15px;
@@ -113,44 +113,26 @@ body{
 }
 
 .description{
-    @apply w-full mt-3 mb-3  ml-8 flex flex-col ;
-    /* width: 100%;
-    margin-top: 10px;
-    margin-bottom: 10px; */
+    /* @apply w-full mt-3 mb-3  ml-8 flex flex-col ; */
 }
 
 table,tr{
     @apply w-11/12 border-2 border-solid border-gray-600;
-    /* width: 100%;
-    border: 1px solid black; */
+   
 }
 th,td{
     @apply text-center border-2 border-solid border-black;
-    /* border: 1px solid black;
-    text-align: center; */
+    
     
 }
 
 button{ 
     @apply h-6 p-3 w-fit cursor-pointer flex items-center content-center mt-2 ml-16 mb-1 bg-slate-100 rounded-sm shadow-md outline-none;
-    /* height: 25px;
-    padding: 10px;
-    width:60px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    margin-top: 7px;
-    margin-left: 30%;
-    margin-bottom: 5px;
-    background-color: rgb(218, 245, 245);
-    outline: none;
-    border: none;
-    border-radius: 5px;
-    cursor: pointer; */
+   
 }
 
 .hidden{
-    /* @apply  hidden;  */
+   
    display: none;
    visibility: hidden;
 }
@@ -179,3 +161,8 @@ input:valid{
     justify-content: center;
     width: 300px;
 }
+
+
+tr:nth-child(even) {
+    background-color: #D6EEEE;
+  }
