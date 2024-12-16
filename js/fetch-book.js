@@ -4,13 +4,19 @@ const fetchBtn  = document.getElementById('fetchBtn');
 const category = document.getElementById('categories');
 const tables = document.getElementById('tableid');
 
+
 let uid= 0;
 
 const loadingText =document.getElementById('loading-text');
-
+// if(!tables){
+//   loadingText.style.visibility='hidden';
+// }
+// loadingText.style.visibility='hidden';
+loadingText.style.visibility='visible'
 const changeCategory=()=>{
 
     const allData = Object.values(document.getElementsByTagName('tr'));
+   
     
     allData.map((elem,inde)=>{
       
@@ -42,10 +48,13 @@ const fetchData = async()=>{
 let newid;
 
     try{
+      loadingText.style.visibility='visible';
       const res = await fetch(`https://openlibrary.org/subjects/${category.value}.json`)
      
-      const userData= await res.json();
-      const bookDeails = userData.works;
+      const bookData= await res.json();
+      
+      
+      const bookDeails = bookData.works;
       bookDeails.map((book)=>{
         
         const tr  = document.createElement('tr');    
@@ -74,7 +83,7 @@ let newid;
       tr.classList.add(fetchBtn.value)
   
        tables.appendChild(tr);
- 
+       loadingText.style.visibility='hidden';
         console.log(book.title,book.first_publish_year,book.cover_id,book.authors[0].name);
       })
       
