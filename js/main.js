@@ -72,7 +72,7 @@ addBookBtn.addEventListener('click',(e)=>{
      
  
      addBook(bookTitle,bookAuthor,bookIsbn,bookPublDate,bookGeneral,uid)
-     bookTtle.value=""
+     bookTitle.value=""
      bookAuthor.value=""
      bookIsbn.value=""
      bookPublDate.value=""
