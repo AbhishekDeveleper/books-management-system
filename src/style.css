@@ -16,7 +16,7 @@
     
 }
 .inputdiv{
-    @apply flex justify-between w-3/4 items-center mt-4 flex-wrap;
+    @apply flex justify-between w-3/5 items-center mt-5 flex-wrap;
     /* width: 100%;
     display: flex;
     align-items: center;
@@ -39,28 +39,16 @@
 .formcontainer{
     
     @apply flex flex-col content-center items-center p-10 min-w-max h-fit;
-    /* display: flex;
-    flex-direction: column;
-    justify-content: center;    
-    align-items: center;
-    padding: 40px;
-    min-width: max-content;
-    height: fit-content; */
+    
 }
 .app-title{
-    /* margin-bottom: 10px; */
-    @apply text-green-500 ;
+ 
+    @apply text-red-700 ;
 }
 
 input{
-    @apply h-8  border-2 border-gray-400 border-solid outline-none rounded-sm pl-3 w-full;
-    /* height: 30px;
-    border: 2px solid #33333336;
-    outline: none;
-    border-radius: 5px;
-    padding-left: 10px;
-    font-family: 'Courier New', Courier, monospace;
-    width: 100%; */
+    @apply h-8  border-2  outline-none rounded-md pl-3 w-full;
+  
 }
 
 ::placeholder{
@@ -135,3 +123,4 @@ input:valid{
 tr:nth-child(even) {
     background-color: #D6EEEE;
   }
+

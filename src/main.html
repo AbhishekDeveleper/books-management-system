@@ -7,7 +7,7 @@
     <!-- <link href="https://unpkg.com/tailwindcss@^1.0/dist/tailwind.min.css" rel="stylesheet"> -->
     <title>books-management-system</title>
   </head>
-  <body class="p-5 flex flex-col">
+  <body class="p-5 flex flex-col bg-slate-50">
     
     <div class="container">
       
@@ -30,6 +30,10 @@
             <div calass="labeldiv"><label for="publicationDate">Publication Date</label></div>
             <input type="date" id="publicationDate" placeholder="Enter Publication Date" required=true/>
         </div> 
+        <div class="inputdiv">
+          <div calass="labeldiv"><label for="publicationDate">Book Price</label></div>
+          <input type="text" id="bookPrice" placeholder="Enter Price for this book" required=true/>
+      </div> 
         <div class="inputdiv">
           <div calass="labeldiv"><label for="gener">Gener</label></div>
           <!-- <input type="date" id="publicationDate" placeholder="Enter Publication Date"/> -->
@@ -70,7 +74,7 @@
         <option value="Electronic">Electronic</option>
       </select>
     </div>
-      <table id="tableid">
+      <table id="tableid"class="mt-6 shadow-lg">
         <tr>
           <th>Book Title</th>
           <th>Author</th>
@@ -79,6 +83,8 @@
           <th>Gener</th>
           <th>Operation</th>
           <th>Book age</th>
+          <th>Book Price</th>
+          <th>Discount Price</th>
         </tr>
         
       </table>
