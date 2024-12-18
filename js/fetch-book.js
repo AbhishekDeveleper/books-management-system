@@ -8,10 +8,8 @@ const tables = document.getElementById('tableid');
 let uid= 0;
 
 const loadingText =document.getElementById('loading-text');
-// if(!tables){
-//   loadingText.style.visibility='hidden';
-// }
-// loadingText.style.visibility='hidden';
+
+
 loadingText.style.visibility='visible'
 const changeCategory=()=>{
 
