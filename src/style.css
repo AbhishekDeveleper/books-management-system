@@ -4,35 +4,22 @@
 
 *{
     @apply  font-mono p-0 m-0;
-    /* padding: 0;
-    margin: 0; */
-}
-.labeldiv{
-/*     
-    mr-4 bg-red-500; */
-    @apply mr-8 w-64;
-    /* margin-right: 30px;
-    width: 120px; */
-    
-}
-.inputdiv{
-    @apply flex justify-between w-3/5 items-center mt-5 flex-wrap;
-    /* width: 100%;
-    display: flex;
-    align-items: center;
-    margin-top: 18px;
-    flex-wrap: wrap; 
-    justify-content: space-between; */
-    
 }
 
-.container{
-       
+.labeldiv{
+    @apply mr-8 w-64;
+}
+
+.inputdiv{
+    @apply flex justify-between w-3/5 items-center mt-5 flex-wrap;   
+}
+
+.container
+{      
        width: 100%;
        height: 100%;
        display: flex;
-       flex-direction: column;
-     
+       flex-direction: column;   
 }
 
 
@@ -61,10 +48,6 @@ input{
  
 }
 
-#addBookBtn{
-  
-
-}
 
 select{
     @apply mt-3 mb-3 w-full outline-none border-0 h-8 rounded-sm pl-2;
