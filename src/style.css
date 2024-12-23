@@ -2,6 +2,7 @@
 @tailwind components;
 @tailwind utilities;
 
+
 ::placeholder {
   color: rgba(15, 19, 1, 0.87);
   font-family: "Courier New", Courier, monospace;
