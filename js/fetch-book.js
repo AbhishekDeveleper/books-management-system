@@ -38,7 +38,6 @@ const fetchData = async () => {
       th4.textContent = book.first_publish_year;
       const th5 = document.createElement("td");
       const fetchCategoryButton = document.getElementById("fetchBtn");
-      console.log(fetchCategoryButton);
       th5.textContent = domElem.category.value;
 
       tr.appendChild(th1);
@@ -54,22 +53,15 @@ const fetchData = async () => {
 
       bookTable.appendChild(tr);
       loadingText.style.visibility = "hidden";
-      console.log(
-        book.title,
-        book.first_publish_year,
-        book.cover_id,
-        book.authors[0].name
-      );
     });
   } catch (err) {
-    console.log(err.message);
+    alert("Error message", err.message || err);
   }
 };
 
 // Add event listener for category selection and fetch data
 domElem.category.addEventListener("click", () => {
   dm.searchAndFilterByCategory(domElem.category);
-  console.log("loading");
   fetchData();
 });
 
