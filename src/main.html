@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="./output.css">
+        <title>books-management-system</title>
+    </head>
+    <body class="p-5 flex flex-col bg-slate-50 font-mono ">
+        <div class="w-full h-full flex flex-col">
+            <form action="form-container" class="flex flex-col content-center items-center p-10 min-w-max h-fit">
+                <div class=" text-red-700">Book Managment System</div>
+                <div class="flex justify-between w-3/6 items-center mt-8 flex-wrap">
+                    <div class="mr-8 w-64">
+                        <label for="title">Book Title</label>
+                    </div>
+                    <input
+                        class="h-8  border-2  outline-none rounded-md pl-3 w-full"
+                        type="text"
+                        id="title"
+                        placeholder="Enter Book Name"
+                        required
+                    >
+                </div>
+                <div class="flex justify-between w-3/6 items-center mt-8 flex-wrap">
+                    <div class="mr-8 w-64">
+                        <label for="author">Author</label>
+                    </div>
+                    <input
+                        class="h-8  border-2  outline-none rounded-md pl-3 w-full"
+                        type="text"
+                        id="author"
+                        placeholder="Enter Author Name"
+                        required
+                    >
+                </div>
+                <div class="flex justify-between w-3/6 items-center mt-8 flex-wrap">
+                    <div class="mr-8 w-64">
+                        <label for="isbn">ISBN</label>
+                    </div>
+                    <input
+                        class="h-8  border-2  outline-none rounded-md pl-3 w-full"
+                        type="number"
+                        id="isbn"                       
+                        placeholder="Enter ISBN Number"   
+                        required                   
+                    >
+                </div>
+
+                <div class="flex justify-between w-3/6 items-stretch mt-8 flex-wrap">
+                    <div class="mr-8 w-64">
+                        <label for="publicationDate">Publication Date</label>
+                    </div>
+                    <input
+                        class="h-8  border-2  outline-none rounded-md pl-3 w-full"
+                        type="date"
+                        id="publicationDate"
+                        placeholder="Enter Publication Date"
+                        required="true"
+                    >
+                </div>
+                <div class="flex justify-between w-3/6 items-center mt-8 flex-wrap">
+                    <div class="mr-8 w-64">
+                        <label for="publicationDate">Book Price</label>
+                    </div>
+                    <input
+                        class="h-8  border-2  outline-none rounded-md pl-3 w-full"
+                        type="number"
+                        id="bookPrice"
+                        placeholder="Enter Price for this book" 
+                        required 
+                    >
+                </div>
+                <div class="flex justify-between w-3/6 items-center mt-8 flex-wrap">
+                    <div class="mr-8 w-64">
+                        <label for="gener">Gener</label>
+                    </div>
+                    <select name="gener" id="gener" class="mt-3 mb-3 w-full outline-none border-0 h-8 rounded-sm pl-2">
+                        <option value="Science">Science</option>
+                        <option value="Fiction">Fiction</option>
+                        <option value="History">History</option>
+                        <option value="Adventure">Adventure</option>
+                        <option value="Electronic">Electronic</option>
+                    </select>
+                </div>
+                <div class="flex items-center content-center mt-4  flex-row">
+                    <input
+                        type="submit"
+                        value="Add Book"
+                        id="addBookBtn"
+                        class="h-9 w-fit px-4 py-1 bg-cyan-900 border-none text-white cursor-pointer rounded-md"
+                    >
+                    <a href="fetch-book.html" class="ml-12 hover:text-gray-700 text-md">Other Books Links &rarr;</a>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div class="w-full mt-3 mb-3  ml-8 flex flex-col ">
+        <div class="flex items-center justify-center w-60">
+            <select name="" id="categories" class="mt-3 mb-3 w-full outline-none border-0 h-8 rounded-sm pl-2">
+                <option value="No Category">No Category</option>
+                <option value="Science">Science</option>
+                <option value="Fiction">Fiction</option>
+                <option value="History">History</option>
+                <option value="Adventure">Adventure</option>
+                <option value="Electronic">Electronic</option>
+            </select>
+        </div>
+        <table id="tableid" class="mt-6 shadow-lg">
+            <tr>
+                <th>Book Title</th>
+                <th>Author</th>
+                <th>ISBN</th>
+                <th>Issued Date(Y:M:D)</th>
+                <th>Gener</th>
+                <th>Operation</th>
+                <th>Book age</th>
+                <th>Book Price</th>
+                <th>Discount Price</th>
+            </tr>
+        </table>
+        <script type="module" src="./../js/main.js"></script>
+    </body>
+</html>

@@ -1,90 +1,70 @@
-import {addBook} from "./add-book.js";
-export const btn=document.querySelector(".addBookBtn");
-export const title=document.getElementById('title');
-export const author=document.getElementById('author');
-export const isbn=document.getElementById('isbn');
-export const publDate = document.getElementById('publicationDate');
-export const general = document.getElementById('gener');
-const tables = document.getElementById('tableid');
-export const category = document.getElementById('categories')
+import { classController } from "./crud-operation.js";
 
-let uid= 0;
+const { dm, domElem } = classController;
 
+let uId = 0; // Unique ID for each book entry
 
-tables.style.visibility='hidden';
-category.style.visibility='hidden'
+// Initially hide the table and category select field
+domElem.tables.style.visibility = "hidden";
+domElem.category.style.visibility = "hidden";
 
-
-const changeCategory=()=>{
-
-  const allData = Object.values(document.getElementsByTagName('tr'));
-  
-  allData.map((elem,inde)=>{
-    
-    const classlist=elem.classList
-      
-   
-   if(Object.values(classlist)[1]!=category.value ){
-    if(Object.values(classlist)[1]!=undefined)
-
-    
-      elem.classList.add('hidden');
-   }else{
-    elem.classList.remove('hidden');
-   }
-   if(category.value=="No Category") {
-   
-    elem.classList.remove('hidden');}
-    
-  })
-
-  
-  
-
+// Show the table if there are any existing rows
+if (domElem.tables.children.length >= 2) {
+  domElem.tables.style.visibility = "visible";
 }
-category.addEventListener('click',changeCategory)
 
+// Event listener for the category dropdown
+domElem.category.addEventListener("click", () => {
+  dm.filterByCategory();
+});
 
+// Check if the "Add Book" button exists and add event listener for click action
+if (domElem.addBookBtn) {
+  domElem.addBookBtn.addEventListener("click", (event) => {
+    event.preventDefault();
 
-if(tables.children.length>=2) tables.style.visibility='visible'
-btn.addEventListener('click',(e)=>{
-  
-    e.preventDefault();
-    uid = uid + 1
-    console.log(uid,'uid')
-    console.log(typeof isbn);
-    
-    
-    const regex = /[^0-9]/;
-    if(isbn.value.match(regex)){
-      isbn.style.borderColor='red'
-      
-      console.log('comes')
+    uId = uId + 1;
+
+    const regex = /[^0-9]/; // Regular expression to check if ISBN contains non-numeric characters
+
+    if (domElem.bookIsbn.value.match(regex)) {
+      domElem.bookIsbn.style.borderColor = "red";
       return;
-     
     }
-    isbn.style.borderColor='#33333336';
-    if(title.value=="" || author.value=="" || isbn.value=="" || publDate.value=="" || general.value ==''){ 
-      alert("All fields are reqquired !") 
-      return}
-     
-      
-     
- 
-     addBook(title,author,isbn,publDate,general,uid)
-     title.value=""
-     author.value=""
-     isbn.value=""
-     publDate.value=""
-     btn.value='Add Book'
-     
-   
-     console.log(`Book Title : ${title.value} Book Author:${author.value} 
-        ISBN: ${isbn.value} Publication Date: ${publDate.value}
-        General : ${general.value}`)
-  console.log("btn clicked")
-  
-})
+    domElem.bookIsbn.style.borderColor = "#33333336";
 
+    if (
+      domElem.bookTitle.value == "" ||
+      domElem.bookAuthor.value == "" ||
+      domElem.bookIsbn.value == "" ||
+      domElem.bookPublDate.value == "" ||
+      domElem.bookGeneral.value == "" ||
+      domElem.bookPrice.value == ""
+    ) {
+      alert("All fields are required!");
+      return;
+    }
 
+    // Add the book to the table with the provided input values
+    dm.addBookToTable(
+      domElem.bookTitle,
+      domElem.bookAuthor,
+      domElem.bookIsbn,
+      domElem.bookPublDate,
+      domElem.bookGeneral,
+      uId,
+      domElem.bookPrice
+    );
 
+    // Clear the input fields after adding the book to the table
+    domElem.bookTitle.value = "";
+    domElem.bookAuthor.value = "";
+    domElem.bookIsbn.value = "";
+    domElem.bookPublDate.value = "";
+    domElem.bookGeneral.value = "";
+    domElem.bookPrice.value = "";
+
+    // Reset the "Add Book" button text to its default value
+    domElem.addBookBtn.value = "Add Book";
+  });
+}

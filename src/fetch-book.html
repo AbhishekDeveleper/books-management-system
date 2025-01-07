@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./output.css">
+    <title>Document</title>
+</head>
+<body class="w-full ">
+    <p class="flex justify-center mt-8 text-xl text-green-600">Books Center</p>
+    <div class="w-full mt-5 mb-5  ml-8 flex flex-col "  id="fetchBtn">
+        <div class="fw-3/4 lex justify-center mb-6 mt-6 items-center">
+          <select name="" id="categories"  class="w-3/4 mt-5 mb-5 h-8">        
+          <option value="science">Science</option>
+          <option value="all">ALL Books</option>
+          <option value="fiction">Fiction</option>
+          <option value="history">History</option>
+          <option value="adventure">Adventure</option>
+          <option value="electronic">Electronic</option>
+        </select>
+      </div>
+     <p id="loading-text">Loading ...</p>
+      <table id="tableid">
+        <tr>
+          <th>Book Title</th>
+          <th>Author</th>
+          <th>ISBN</th>
+          <th>Publicshed Date</th>
+          <th>Gener</th>         
+        </tr>       
+      </table>
+      <script type="module" src="./../js/fetch-book.js"></script>
+</body>
+
+</html>
