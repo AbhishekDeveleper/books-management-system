@@ -1,5 +1,6 @@
 // DOMElements class initializes DOM elements to be used throughout the app
 class DOMElements {
+  
   constructor() {
     this.addBookBtn = document.getElementById("addBookBtn");
     this.bookPrice = document.getElementById("bookPrice");
