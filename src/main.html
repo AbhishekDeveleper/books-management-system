@@ -43,7 +43,8 @@
                         type="number"
                         id="isbn"                       
                         placeholder="Enter ISBN Number"   
-                        required                   
+                        required  
+                        onkeydown="javascript: return ['Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) ? true : !isNaN(Number(event.key)) && event.code!=='Space'"                  
                     >
                 </div>
 
@@ -69,6 +70,7 @@
                         id="bookPrice"
                         placeholder="Enter Price for this book" 
                         required 
+                        onkeydown="javascript: return ['Backspace','Delete','ArrowLeft','ArrowRight'].includes(event.code) ? true : !isNaN(Number(event.key)) && event.code!=='Space'"   
                     >
                 </div>
                 <div class="flex justify-between w-3/6 items-center mt-8 flex-wrap">
