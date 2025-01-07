@@ -27,14 +27,23 @@ class BookDataManager {
 
   // Adds a book to the table when not in edit mode
   addBookToTable(title, author, isbn, publDate, general, uid, bookPrice) {
+    let bookage;
+    let ageDifference;
     const todayDate = new Date();
-
     const years = publDate.value.split("-")[0] - todayDate.getFullYear();
     const months = publDate.value.split("-")[1] - (todayDate.getMonth() + 1);
     const days = publDate.value.split("-")[2] - todayDate.getDate();
     let newBookId;
+    ageDifference = years * 365 + months * 30 + days;
+    if (ageDifference > 0) {
+      bookage = `Publishing after ${ageDifference} days`;
+    } else if (ageDifference == 0) {
+      bookage = `Published Today`;
+    } else {
+      ageDifference = ageDifference * -1;
+      bookage = `Published before ${ageDifference} days`;
+    }
 
-    // If not in edit mode, create a new row for the book
     if (this.isEditModeActive.value === false) {
       const tr = document.createElement("tr");
       const titleCell = document.createElement("td");
@@ -68,7 +77,7 @@ class BookDataManager {
       actionCell.appendChild(deleteButton);
 
       const ageCell = document.createElement("td");
-      ageCell.textContent = `${years}-Y /${months}-M /${days}-d`;
+      ageCell.textContent = bookage;
 
       tr.appendChild(titleCell);
       tr.appendChild(authorCell);
@@ -101,10 +110,10 @@ class BookDataManager {
       this.editedBookRow[0].children[2].innerText = isbn.value;
       this.editedBookRow[0].children[3].innerText = publDate.value;
       this.editedBookRow[0].children[4].innerText = general.value;
-      this.editedBookRow[0].children[6].innerText = `${years}-Y /${months}-M /${days}-d`;
+      this.editedBookRow[0].children[6].innerText = bookage;
       this.editedBookRow[0].children[7].innerText = bookPrice.value;
       this.editedBookRow[0].children[8].innerText =
-        bookPrice.value * this.#DISCOUNT_RATE;
+        bookPrice.value * this.#DISCOUNT_RATE.toFixed(2);
 
       this.isEditModeActive.value = false; // Turn off edit mode
       domElem.category.value = "No Category"; // Reset category value
