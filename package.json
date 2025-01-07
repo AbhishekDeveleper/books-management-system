@@ -1,5 +1,11 @@
 {
   "devDependencies": {
     "tailwindcss": "^3.4.16"
+  },
+  "dependencies": {
+    "typescript": "^5.7.2"
+  },
+  "scripts": {
+    "builds":"tsc"
   }
 }
